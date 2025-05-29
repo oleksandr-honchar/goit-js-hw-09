@@ -37,6 +37,7 @@ input {
   width: 360px;
   height: 40px;
   margin-bottom: 8px;
+  border-color: #808080;
 }
 
 textarea {
@@ -45,24 +46,21 @@ textarea {
   width: 360px;
   height: 80px;
   margin-bottom: 16px;
-}
-
-input:focus,
-textarea:focus {
-  border: 2px solid #000000;
-  outline: none;
-}
-
-textarea {
   font-family: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #2e2f42;
-  border-radius: 8px;
   padding: 8px 16px;
-  border: none;
+}
+
+input:hover,
+textarea:hover {
+  border-color: #000000;
+}
+
+textarea {
 }
 textarea::placeholder {
   color: #b0b0b0;
