@@ -1,8 +1,4 @@
-// JS import
 import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-// Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
@@ -91,15 +87,9 @@ const galleryMarkup = images
 
 gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
-// Initialize SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   scrollZoom: false,
   close: true,
-});
-
-// Optional: Add event listener for lightbox events
-lightbox.on('show.simplelightbox', () => {
-  console.log('Lightbox is shown');
 });
