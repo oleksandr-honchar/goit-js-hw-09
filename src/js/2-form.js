@@ -18,7 +18,7 @@ form.addEventListener('input', event => {
   const { name, value } = event.target;
 
   if (name in formData) {
-    formData[name] = value;
+    formData[name] = value.trim();
   }
 
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
