@@ -1,5 +1,10 @@
-body {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body {
   background-color: #f0f0f0;
   margin: 24px;
   font-family: 'Montserrat', sans-serif;
@@ -63,9 +68,15 @@ textarea:hover {
   outline: none;
 }
 
+input:active,
+textarea:active {
+  border-color: #808080;
+  outline: none;
+}
+
 input::placeholder,
 textarea::placeholder {
-  color: #b0b0b0;
+  color: #2e2f42;
 }
 
 button {
