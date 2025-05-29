@@ -1,30 +1,39 @@
-let formData = {
+const formData = {
   email: '',
   message: '',
 };
 
-function handleFormSubmit(event) {
-  event.preventDefault();
-  formData.name = document.getElementById('name').value;
-  formData.email = document.getElementById('email').value;
-  formData.message = document.getElementById('message').value;
+const savedData = JSON.parse(localStorage.getItem('feedback-form-state'));
+if (savedData) {
+  formData.email = savedData.email;
+  formData.message = savedData.message;
 
-  console.log('Form submitted:', formData);
-  alert('Form submitted successfully!');
+  document.querySelector('input[name="email"]').value = formData.email;
+  document.querySelector('textarea[name="message"]').value = formData.message;
 }
 
-document
-  .getElementById('contactForm')
-  .addEventListener('submit', handleFormSubmit);
+const form = document.querySelector('.feedback-form');
 
-document.getElementById('name').addEventListener('input', function () {
-  formData.name = this.value;
+form.addEventListener('input', event => {
+  const { name, value } = event.target;
+
+  if (name in formData) {
+    formData[name] = value;
+  }
+
+  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
 
-document.getElementById('email').addEventListener('input', function () {
-  formData.email = this.value;
-});
+form.addEventListener('submit', event => {
+  event.preventDefault();
 
-document.getElementById('message').addEventListener('input', function () {
-  formData.message = this.value;
+  if (formData.email === '' || formData.message === '') {
+    alert('Fill please all fields');
+  } else {
+    console.log(formData);
+
+    form.reset();
+    localStorage.removeItem('feedback-form-state');
+    Object.keys(formData).forEach(key => (formData[key] = ''));
+  }
 });
