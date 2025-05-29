@@ -60,8 +60,6 @@ textarea:hover {
   border-color: #000000;
 }
 
-textarea {
-}
 textarea::placeholder {
   color: #b0b0b0;
   margin-left: 16px;
