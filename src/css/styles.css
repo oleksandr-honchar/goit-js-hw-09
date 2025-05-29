@@ -39,6 +39,7 @@ input {
   height: 40px;
   margin-bottom: 8px;
   border-color: #808080;
+  padding: 8px 16px;
 }
 
 textarea {
@@ -64,7 +65,6 @@ textarea:hover {
 input::placeholder,
 textarea::placeholder {
   color: #b0b0b0;
-  margin-left: 16px;
 }
 
 button {
